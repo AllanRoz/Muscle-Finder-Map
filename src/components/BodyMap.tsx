@@ -36,7 +36,7 @@ function Body({
         role="img"
         aria-label={`${title} view of the human body with clickable muscle groups`}
       >
-        <g className="fill-body stroke-muscle-line" strokeWidth="1.5">
+        <g className="pointer-events-none fill-body stroke-muscle-line" strokeWidth="1.5">
           {silhouette}
         </g>
         {regions.map((r) => {
