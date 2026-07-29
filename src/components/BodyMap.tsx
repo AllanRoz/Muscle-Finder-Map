@@ -328,8 +328,20 @@ const backRegions: Region[] = [
 export function BodyMap(props: Props) {
   return (
     <div className="grid grid-cols-2 gap-4">
-      <Body {...props} title="Anterior" regions={frontRegions} silhouette={frontSilhouette} />
-      <Body {...props} title="Posterior" regions={backRegions} silhouette={frontSilhouette} />
+      <Body
+        {...props}
+        title="Front"
+        regions={frontRegions}
+        silhouette={frontSilhouette}
+        anchors={FRONT_ANCHORS}
+      />
+      <Body
+        {...props}
+        title="Back"
+        regions={backRegions}
+        silhouette={frontSilhouette}
+        anchors={BACK_ANCHORS}
+      />
     </div>
   );
 }
