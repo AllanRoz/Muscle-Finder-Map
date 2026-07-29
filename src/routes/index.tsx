@@ -31,8 +31,10 @@ export const Route = createFileRoute("/")({
 function Index() {
   const [active, setActive] = useState<MuscleId | null>(null);
   const [open, setOpen] = useState<Exercise | null>(null);
+  const [hovered, setHovered] = useState<Exercise | null>(null);
 
   const secondary = open ? open.secondary.filter((m) => m !== active) : [];
+
 
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -63,7 +65,13 @@ function Index() {
 
         <div className="mt-8 grid gap-6 lg:grid-cols-[3fr_2fr]">
           <section className="rounded-2xl border border-border bg-card/50 p-5 sm:p-8">
-            <BodyMap primary={active} secondary={secondary} onSelect={setActive} />
+            <BodyMap
+              primary={active}
+              secondary={secondary}
+              hoverPrimary={hovered?.primary ?? []}
+              hoverSecondary={hovered?.secondary ?? []}
+              onSelect={setActive}
+            />
             {active && (
               <p className="mt-6 text-center text-sm text-muted-foreground">
                 Primary target: <span className="font-semibold text-primary">{MUSCLE_NAMES[active]}</span>
@@ -76,8 +84,10 @@ function Index() {
               active={active}
               onSelectExercise={setOpen}
               onSelectMuscle={setActive}
+              onHoverExercise={setHovered}
             />
           </section>
+
         </div>
       </div>
 
