@@ -328,7 +328,8 @@ const backRegions: Region[] = [
 
 export function BodyMap(props: Props) {
   return (
-    <div className="grid grid-cols-2 gap-4">
+    <div className="flex h-full min-h-0 w-full gap-4">
+
       <Body
         {...props}
         title="Front"
