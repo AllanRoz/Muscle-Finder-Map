@@ -58,6 +58,10 @@ export function DiscoveryPanel({
             <li key={ex.id}>
               <button
                 onClick={() => onSelectExercise(ex)}
+                onMouseEnter={() => onHoverExercise?.(ex)}
+                onMouseLeave={() => onHoverExercise?.(null)}
+                onFocus={() => onHoverExercise?.(ex)}
+                onBlur={() => onHoverExercise?.(null)}
                 className="group grid w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-4 rounded-xl border border-border bg-card p-4 text-left transition-all hover:border-primary hover:bg-muted"
               >
                 <span className="min-w-0">

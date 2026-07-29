@@ -31,8 +31,10 @@ export const Route = createFileRoute("/")({
 function Index() {
   const [active, setActive] = useState<MuscleId | null>(null);
   const [open, setOpen] = useState<Exercise | null>(null);
+  const [hovered, setHovered] = useState<Exercise | null>(null);
 
   const secondary = open ? open.secondary.filter((m) => m !== active) : [];
+
 
   return (
     <main className="min-h-screen bg-background text-foreground">
