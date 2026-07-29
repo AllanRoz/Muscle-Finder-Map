@@ -12,10 +12,12 @@ export function DiscoveryPanel({
   active,
   onSelectExercise,
   onSelectMuscle,
+  onHoverExercise,
 }: {
   active: MuscleId | null;
   onSelectExercise: (e: Exercise) => void;
   onSelectMuscle: (m: MuscleId) => void;
+  onHoverExercise?: (e: Exercise | null) => void;
 }) {
   if (!active) {
     return (
