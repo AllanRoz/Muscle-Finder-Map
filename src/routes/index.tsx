@@ -37,9 +37,9 @@ function Index() {
 
 
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-8">
-        <header className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-b border-border pb-6 sm:flex sm:justify-between">
+    <main className="flex h-screen flex-col overflow-hidden bg-background text-foreground">
+      <div className="mx-auto flex h-full w-full max-w-[1800px] flex-col px-4 py-4 sm:px-8 sm:py-6">
+        <header className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 border-b border-border pb-4 sm:flex sm:justify-between">
           <div className="flex min-w-0 items-center gap-3">
             <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-primary/15 text-primary">
               <Activity className="h-6 w-6" />
@@ -63,23 +63,25 @@ function Index() {
           </div>
         </header>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-[3fr_2fr]">
-          <section className="rounded-2xl border border-border bg-card/50 p-5 sm:p-8">
-            <BodyMap
-              primary={active}
-              secondary={secondary}
-              hoverPrimary={hovered?.primary ?? []}
-              hoverSecondary={hovered?.secondary ?? []}
-              onSelect={setActive}
-            />
+        <div className="mt-4 grid min-h-0 flex-1 gap-4 overflow-hidden lg:grid-cols-[3fr_2fr]">
+          <section className="flex min-h-0 flex-col rounded-2xl border border-border bg-card/50 p-4 sm:p-6">
+            <div className="min-h-0 flex-1">
+              <BodyMap
+                primary={active}
+                secondary={secondary}
+                hoverPrimary={hovered?.primary ?? []}
+                hoverSecondary={hovered?.secondary ?? []}
+                onSelect={setActive}
+              />
+            </div>
             {active && (
-              <p className="mt-6 text-center text-sm text-muted-foreground">
+              <p className="mt-3 text-center text-sm text-muted-foreground">
                 Primary target: <span className="font-semibold text-primary">{MUSCLE_NAMES[active]}</span>
               </p>
             )}
           </section>
 
-          <section className="rounded-2xl border border-border bg-card/50 p-5 sm:p-6">
+          <section className="min-h-0 overflow-y-auto rounded-2xl border border-border bg-card/50 p-4 sm:p-6">
             <DiscoveryPanel
               active={active}
               onSelectExercise={setOpen}
@@ -89,6 +91,7 @@ function Index() {
           </section>
 
         </div>
+
       </div>
 
       <ExerciseModal exercise={open} onClose={() => setOpen(null)} />
