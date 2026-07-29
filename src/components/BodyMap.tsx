@@ -3,16 +3,13 @@ import { MUSCLE_NAMES, type MuscleId } from "@/data/muscles";
 type Props = {
   primary: MuscleId | null;
   secondary: MuscleId[];
+  /** Muscles highlighted transiently by hovering an exercise in the discovery panel. */
+  hoverPrimary?: MuscleId[];
+  hoverSecondary?: MuscleId[];
   onSelect: (m: MuscleId) => void;
 };
 
 type Region = { id: MuscleId; shapes: React.ReactNode };
-
-function state(id: MuscleId, primary: MuscleId | null, secondary: MuscleId[]) {
-  if (primary === id) return "primary";
-  if (secondary.includes(id)) return "secondary";
-  return "idle";
-}
 
 const CLASS: Record<string, string> = {
   idle: "fill-muscle stroke-muscle-line",
@@ -20,19 +17,78 @@ const CLASS: Record<string, string> = {
   secondary: "fill-accent stroke-accent drop-shadow-glow-accent",
 };
 
+const FRONT_ANCHORS: Partial<Record<MuscleId, [number, number]>> = {
+  chest: [78, 88],
+  "front-delts": [62, 79],
+  "side-delts": [150, 86],
+  biceps: [49, 115],
+  forearms: [155, 163],
+  abs: [100, 135],
+  obliques: [80, 134],
+  quads: [85, 210],
+  calves: [115, 292],
+};
+
+const BACK_ANCHORS: Partial<Record<MuscleId, [number, number]>> = {
+  "rear-delts": [61, 80],
+  "upper-back": [100, 81],
+  triceps: [48, 116],
+  forearms: [155, 163],
+  lats: [85, 118],
+  "lower-back": [100, 151],
+  glutes: [85, 181],
+  hamstrings: [115, 231],
+  calves: [85, 294],
+};
+
 function Body({
   title,
   regions,
   silhouette,
+  anchors,
   primary,
   secondary,
+  hoverPrimary = [],
+  hoverSecondary = [],
   onSelect,
-}: Props & { title: string; regions: Region[]; silhouette: React.ReactNode }) {
+}: Props & {
+  title: string;
+  regions: Region[];
+  silhouette: React.ReactNode;
+  anchors: Partial<Record<MuscleId, [number, number]>>;
+}) {
+  const hovering = hoverPrimary.length > 0 || hoverSecondary.length > 0;
+
+  const state = (id: MuscleId) => {
+    if (hovering) {
+      if (hoverPrimary.includes(id)) return "primary";
+      if (hoverSecondary.includes(id)) return "secondary";
+      return "idle";
+    }
+    if (primary === id) return "primary";
+    if (secondary.includes(id)) return "secondary";
+    return "idle";
+  };
+
+  const callouts = hovering
+    ? regions
+        .filter((r) => hoverPrimary.includes(r.id) || hoverSecondary.includes(r.id))
+        .filter((r, i, arr) => arr.findIndex((x) => x.id === r.id) === i)
+        .map((r) => ({
+          id: r.id,
+          isPrimary: hoverPrimary.includes(r.id),
+          point: anchors[r.id],
+        }))
+        .filter((c): c is { id: MuscleId; isPrimary: boolean; point: [number, number] } =>
+          Boolean(c.point),
+        )
+    : [];
+
   return (
     <figure className="flex min-w-0 flex-col items-center gap-3">
       <svg
-        viewBox="0 0 200 420"
-        className="h-auto w-full max-w-[280px]"
+        viewBox="-58 0 316 420"
+        className="h-auto w-full max-w-[340px]"
         role="img"
         aria-label={`${title} view of the human body with clickable muscle groups`}
       >
@@ -40,7 +96,7 @@ function Body({
           {silhouette}
         </g>
         {regions.map((r) => {
-          const st = state(r.id, primary, secondary);
+          const st = state(r.id);
           return (
             <g
               key={r.id}
@@ -63,6 +119,37 @@ function Body({
             </g>
           );
         })}
+        <g className="pointer-events-none">
+          {callouts.map((c) => {
+            const [x, y] = c.point;
+            const left = x < 100;
+            const labelX = left ? -54 : 254;
+            const elbowX = left ? -6 : 206;
+            const color = c.isPrimary ? "var(--primary)" : "var(--accent)";
+            return (
+              <g key={`${c.id}-callout`} className="animate-in fade-in duration-200">
+                <path
+                  d={`M ${labelX + (left ? 46 : -46)} ${y} H ${elbowX} L ${x} ${y}`}
+                  fill="none"
+                  stroke={color}
+                  strokeWidth="1.2"
+                  strokeDasharray="3 3"
+                />
+                <circle cx={x} cy={y} r="3" fill={color} />
+                <text
+                  x={labelX + (left ? 44 : -44)}
+                  y={y + 3.5}
+                  textAnchor={left ? "end" : "start"}
+                  fill={color}
+                  fontSize="10"
+                  fontWeight="700"
+                >
+                  {MUSCLE_NAMES[c.id]}
+                </text>
+              </g>
+            );
+          })}
+        </g>
       </svg>
       <figcaption className="text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground">
         {title}
@@ -70,6 +157,7 @@ function Body({
     </figure>
   );
 }
+
 
 const frontSilhouette = (
   <>
