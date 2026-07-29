@@ -85,10 +85,11 @@ function Body({
     : [];
 
   return (
-    <figure className="flex min-w-0 flex-col items-center gap-3">
+    <figure className="flex min-h-0 min-w-0 flex-1 flex-col items-center gap-3">
       <svg
         viewBox="-95 0 390 420"
-        className="h-auto w-full max-w-[420px]"
+        className="h-full min-h-0 w-full flex-1"
+        preserveAspectRatio="xMidYMid meet"
         role="img"
         aria-label={`${title} view of the human body with clickable muscle groups`}
       >
