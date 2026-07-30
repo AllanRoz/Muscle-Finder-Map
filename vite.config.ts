@@ -21,7 +21,7 @@ export default defineConfig({
   },
 
   vite: {
-    base: isGithubPages ? "/muscle-matrix-map/" : "/",
+    base: isGithubPages ? "/Muscle-Finder-Map/" : "/",
     build: isGithubPages ? { outDir: "dist" } : undefined,
   },
 });
