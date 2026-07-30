@@ -88,7 +88,7 @@ Follow these steps to set up and run a local copy of the project on your machine
 ### Installation and running a React app locally
 1. Clone the repo
    ```sh
-   git clone https://github.com/AllanRoz/NJIT-CS351-RSA-Algorithm.git
+   git clone https://github.com/AllanRoz/muscle-matrix-map.git
    ```
 2. Change into the project directory
    ```sh
@@ -132,7 +132,7 @@ Distributed under the GPL-3.0 license. See `LICENSE.txt` for more information.
 
 Allan Rozario - arozadev@gmail.com
 
-Project Link: [https://github.com/AllanRoz/NJIT-CS351-RSA-Algorithm](https://github.com/AllanRoz/NJIT-CS351-RSA-Algorithm)
+Project Link: [https://github.com/AllanRoz/muscle-matrix-map/](https://github.com/AllanRoz/muscle-matrix-map/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
