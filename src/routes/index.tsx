@@ -28,7 +28,7 @@ export const Route = createFileRoute("/")({
       {
         rel: "icon",
         type: "image/png",
-        href: `${import.meta.env.BASE_URL}favicon.ico`,
+        href: `${import.meta.env.BASE_URL}dumbbell.png`,
       },
     ],
   }),
