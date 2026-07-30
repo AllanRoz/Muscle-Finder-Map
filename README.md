@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/AllanRoz/muscle-matrix-map">
-    <img src="public/logo.png" alt="Logo" width="80" height="80">
+    <img src="public/favicon.ico" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">MuscleFinder - Muscle Matrix Map</h3>
