@@ -92,17 +92,13 @@ Follow these steps to set up and run a local copy of the project on your machine
    ```
 2. Change into the project directory
    ```sh
-   cd NJIT-CS351-RSA-Algorithm
+   cd muscle-matrix-map
    ```
-3. Change into the app directory
-   ```sh
-   cd app
-   ```
-4. Install NPM packages
+3. Install NPM packages
    ```sh
    npm install
    ```
-5. Running the React app locally
+4. Running the React app locally
    ```sh
    npm run dev
    ```
@@ -149,3 +145,7 @@ Project Link: [https://github.com/AllanRoz/muscle-matrix-map/](https://github.co
 [Vite-url]: https://vite.dev/
 [MUI.com]: https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white
 [MUI-url]: https://mui.com/
+[TypeScript.js]: https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
+[TypeScript-url]: https://www.typescriptlang.org/
+[Tailwind.css]: https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white
+[Tailwind-url]: https://tailwindcss.com/
