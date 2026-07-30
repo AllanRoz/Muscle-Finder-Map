@@ -9,13 +9,13 @@ import { MUSCLE_NAMES, type Exercise, type MuscleId } from "@/data/muscles";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "MuscleFinder — Find Exercises by Muscle Group" },
+      { title: "MuscleFinder" },
       {
         name: "description",
         content:
           "Click any muscle on an interactive 2D body map to discover the exercises that target it, watch demos, and get complementary training suggestions.",
       },
-      { property: "og:title", content: "MuscleFinder — Find Exercises by Muscle Group" },
+      { property: "og:title", content: "MuscleFinder" },
       {
         property: "og:description",
         content:
@@ -34,7 +34,6 @@ function Index() {
   const [hovered, setHovered] = useState<Exercise | null>(null);
 
   const secondary = open ? open.secondary.filter((m) => m !== active) : [];
-
 
   return (
     <main className="flex h-screen flex-col overflow-hidden bg-background text-foreground">
@@ -76,7 +75,8 @@ function Index() {
             </div>
             {active && (
               <p className="mt-3 text-center text-sm text-muted-foreground">
-                Primary target: <span className="font-semibold text-primary">{MUSCLE_NAMES[active]}</span>
+                Primary target:{" "}
+                <span className="font-semibold text-primary">{MUSCLE_NAMES[active]}</span>
               </p>
             )}
           </section>
@@ -89,9 +89,7 @@ function Index() {
               onHoverExercise={setHovered}
             />
           </section>
-
         </div>
-
       </div>
 
       <ExerciseModal exercise={open} onClose={() => setOpen(null)} />
