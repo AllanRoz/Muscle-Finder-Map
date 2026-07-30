@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/AllanRoz/muscle-matrix-map">
-    <img src="public/favicon.ico" alt="Logo" width="80" height="80">
+    <img src="public/dumbbell.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">MuscleFinder - Muscle Matrix Map</h3>
@@ -80,8 +80,72 @@ Follow these steps to set up and run a local copy of the project on your machine
 
 ### Prerequisites
 
-Make sure you have Node.js and NPM installed on your system.
-
 * npm
   ```sh
   npm install npm@latest -g
+  ```
+
+### Installation and running a React app locally
+1. Clone the repo
+   ```sh
+   git clone https://github.com/AllanRoz/NJIT-CS351-RSA-Algorithm.git
+   ```
+2. Change into the project directory
+   ```sh
+   cd NJIT-CS351-RSA-Algorithm
+   ```
+3. Change into the app directory
+   ```sh
+   cd app
+   ```
+4. Install NPM packages
+   ```sh
+   npm install
+   ```
+5. Running the React app locally
+   ```sh
+   npm run dev
+   ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- USAGE EXAMPLES -->
+<!--
+## Usage
+
+Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+
+_For more examples, please refer to the [Documentation](https://example.com)_
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+-->
+
+<!-- LICENSE -->
+## License
+
+Distributed under the GPL-3.0 license. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTACT -->
+## Contact
+
+Allan Rozario - arozadev@gmail.com
+
+Project Link: [https://github.com/AllanRoz/NJIT-CS351-RSA-Algorithm](https://github.com/AllanRoz/NJIT-CS351-RSA-Algorithm)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-url]: https://github.com/AllanRoz/NJIT-HSS404-Global-Chili-Pepper-Trail/blob/main/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/allan-rozario/
+[product-screenshot]: public/MuscleFinder.png
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[Vite.dev]: https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white
+[Vite-url]: https://vite.dev/
+[MUI.com]: https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white
+[MUI-url]: https://mui.com/
