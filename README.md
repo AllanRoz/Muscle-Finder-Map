@@ -1,25 +1,25 @@
-# muscle-matrix-map
+# Muscle-Finder-Map
 
 <a id="readme-top"></a>
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/AllanRoz/muscle-matrix-map">
+  <a href="https://github.com/AllanRoz/Muscle-Finder-Map">
     <img src="public/dumbbell.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">MuscleFinder - Muscle Matrix Map</h3>
+  <h3 align="center">MuscleFinder</h3>
 
   <p align="center">
     An interactive 2D anatomy map and exercise discovery tool for fitness enthusiasts.
     <br />
     <br />
-    <a href="https://allanroz.github.io/muscle-matrix-map/">View Demo</a>
+    <a href="https://allanroz.github.io/Muscle-Finder-Map/">View Demo</a>
     &middot;
-    <a href="https://github.com/AllanRoz/muscle-matrix-map/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/AllanRoz/Muscle-Finder-Map/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     &middot;
-    <a href="https://github.com/AllanRoz/muscle-matrix-map/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/AllanRoz/Muscle-Finder-Map/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -50,7 +50,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Screenshot][product-screenshot]](https://allanroz.github.io/muscle-matrix-map/)
+[![Product Screenshot][product-screenshot]](https://allanroz.github.io/Muscle-Finder-Map/)
 
 **MuscleFinder** is an interactive web application that helps users learn which exercises target specific muscle groups across the body. Instead of manually searching through workout lists, users can interact directly with a 2D anatomical body map (front and back views) to instantly view exercises, video tutorials, secondary muscle activations, and smart workout suggestions.
 
@@ -88,11 +88,11 @@ Follow these steps to set up and run a local copy of the project on your machine
 ### Installation and running a React app locally
 1. Clone the repo
    ```sh
-   git clone https://github.com/AllanRoz/muscle-matrix-map.git
+   git clone https://github.com/AllanRoz/Muscle-Finder-Map.git
    ```
 2. Change into the project directory
    ```sh
-   cd muscle-matrix-map
+   cd Muscle-Finder-Map
    ```
 3. Install NPM packages
    ```sh
@@ -128,7 +128,7 @@ Distributed under the GPL-3.0 license. See `LICENSE.txt` for more information.
 
 Allan Rozario - arozadev@gmail.com
 
-Project Link: [https://github.com/AllanRoz/muscle-matrix-map/](https://github.com/AllanRoz/muscle-matrix-map/)
+Project Link: [https://github.com/AllanRoz/Muscle-Finder-Map/](https://github.com/AllanRoz/Muscle-Finder-Map/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
