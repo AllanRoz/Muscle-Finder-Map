@@ -142,7 +142,7 @@ export const EXERCISES: Exercise[] = [
     equipment: "Machine",
     primary: ["rear-delts"],
     secondary: ["upper-back"],
-    videoId: "v_ZoxM1a36E",
+    videoId: "Y59M5fXn8bs",
   },
 
   // ==================== BACK & LATS ====================
@@ -234,7 +234,7 @@ export const EXERCISES: Exercise[] = [
     equipment: "Barbell",
     primary: ["biceps"],
     secondary: ["forearms"],
-    videoId: "34Kx1e8eZ80",
+    videoId: "Gydpcouclx8",
   },
   {
     id: "hammer-curl",
@@ -266,7 +266,7 @@ export const EXERCISES: Exercise[] = [
     equipment: "Cable",
     primary: ["triceps"],
     secondary: [],
-    videoId: "1u18yJQLshQ",
+    videoId: "1u18yJELsh0",
   },
   {
     id: "dumbbell-wrist-curl",
