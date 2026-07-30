@@ -126,7 +126,7 @@ export const EXERCISES: Exercise[] = [
     equipment: "Cable",
     primary: ["side-delts"],
     secondary: [],
-    videoId: "P33U48L5B_Y",
+    videoId: "Z5FA9aq3L6A",
   },
   {
     id: "face-pull",
@@ -184,7 +184,7 @@ export const EXERCISES: Exercise[] = [
     equipment: "Cable",
     primary: ["upper-back", "lats"],
     secondary: ["biceps", "rear-delts"],
-    videoId: "GZbfZ033fBo",
+    videoId: "UCXxvVItLoM",
   },
   {
     id: "barbell-shrug",
@@ -192,7 +192,7 @@ export const EXERCISES: Exercise[] = [
     equipment: "Barbell",
     primary: ["upper-back"],
     secondary: ["forearms"],
-    videoId: "g6qbq4a13R0",
+    videoId: "M_MjF5Nm_h4",
   },
   {
     id: "back-extension",
@@ -218,7 +218,7 @@ export const EXERCISES: Exercise[] = [
     equipment: "Dumbbell",
     primary: ["biceps"],
     secondary: ["forearms"],
-    videoId: "ykJmrZ5v0VN",
+    videoId: "sxA__DoLsgo",
   },
   {
     id: "incline-dumbbell-curl",
@@ -242,7 +242,7 @@ export const EXERCISES: Exercise[] = [
     equipment: "Dumbbell",
     primary: ["biceps", "forearms"],
     secondary: [],
-    videoId: "zC3385GY9RU",
+    videoId: "BRVDS6HVR9Q",
   },
   {
     id: "rope-tricep-pushdown",
@@ -282,7 +282,7 @@ export const EXERCISES: Exercise[] = [
     equipment: "Barbell",
     primary: ["forearms"],
     secondary: ["biceps"],
-    videoId: "n5WFm93yNEI",
+    videoId: "ypfd1kaI1AU",
   },
 
   // ==================== CORE ====================
@@ -316,7 +316,7 @@ export const EXERCISES: Exercise[] = [
     equipment: "Bodyweight",
     primary: ["obliques"],
     secondary: ["abs"],
-    videoId: "wkD8rjkXyUI",
+    videoId: "99T1EfpMwPA",
   },
   {
     id: "cable-woodchopper",
@@ -324,7 +324,7 @@ export const EXERCISES: Exercise[] = [
     equipment: "Cable",
     primary: ["obliques"],
     secondary: ["abs"],
-    videoId: "pA_BdeSbf84",
+    videoId: "iWxTGXIViro",
   },
 
   // ==================== LEGS & GLUTES ====================
