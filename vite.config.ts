@@ -10,11 +10,16 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
-    // Emit a static shell (index.html) and hand routing to the client router.
-    spa: { enabled: true },
-    prerender: { enabled: true, crawlLinks: true },
-    pages: [{ path: "/", prerender: { enabled: true } }],
+    // Static SPA shell only for the GitHub Pages export; the normal build keeps SSR.
+    ...(isGithubPages
+      ? {
+          spa: { enabled: true },
+          prerender: { enabled: true, crawlLinks: true },
+          pages: [{ path: "/", prerender: { enabled: true } }],
+        }
+      : {}),
   },
+
   vite: {
     base: isGithubPages ? "/muscle-matrix-map/" : "/",
     build: isGithubPages ? { outDir: "dist" } : undefined,
