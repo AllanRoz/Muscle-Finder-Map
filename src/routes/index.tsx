@@ -24,6 +24,13 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [
+      {
+        rel: "icon",
+        type: "image/png",
+        href: "/favicon.ico",
+      },
+    ],
   }),
   component: Index,
 });
