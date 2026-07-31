@@ -95,6 +95,7 @@ export function DiscoveryPanel({
                     isSelected ? "text-primary" : "text-muted-foreground"
                   }`}
                 />
+              </button>
             </li>
           );
         })}
