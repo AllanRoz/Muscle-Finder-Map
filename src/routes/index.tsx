@@ -46,6 +46,15 @@ function Index() {
     setOpen(e);
   };
 
+  const selectMuscle = (m: MuscleId) => {
+    if (m !== active) {
+      setSelected(null);
+      setHovered(null);
+      setOpen(null);
+    }
+    setActive(m);
+  };
+
   const secondary = selected ? selected.secondary.filter((m) => m !== active) : [];
 
   return (
@@ -83,7 +92,7 @@ function Index() {
                 secondary={secondary}
                 hoverPrimary={hovered?.primary ?? selected?.primary ?? []}
                 hoverSecondary={hovered?.secondary ?? selected?.secondary ?? []}
-                onSelect={setActive}
+                onSelect={selectMuscle}
               />
             </div>
             {active && (
@@ -99,7 +108,7 @@ function Index() {
               active={active}
               selected={selected}
               onSelectExercise={selectExercise}
-              onSelectMuscle={setActive}
+              onSelectMuscle={selectMuscle}
               onHoverExercise={setHovered}
             />
           </section>
