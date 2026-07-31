@@ -38,9 +38,15 @@ export const Route = createFileRoute("/")({
 function Index() {
   const [active, setActive] = useState<MuscleId | null>(null);
   const [open, setOpen] = useState<Exercise | null>(null);
+  const [selected, setSelected] = useState<Exercise | null>(null);
   const [hovered, setHovered] = useState<Exercise | null>(null);
 
-  const secondary = open ? open.secondary.filter((m) => m !== active) : [];
+  const selectExercise = (e: Exercise) => {
+    setSelected(e);
+    setOpen(e);
+  };
+
+  const secondary = selected ? selected.secondary.filter((m) => m !== active) : [];
 
   return (
     <main className="flex h-screen flex-col overflow-hidden bg-background text-foreground">
@@ -91,8 +97,8 @@ function Index() {
           <section className="min-h-0 overflow-y-auto rounded-2xl border border-border bg-card/50 p-4 sm:p-6">
             <DiscoveryPanel
               active={active}
-              selected={open}
-              onSelectExercise={setOpen}
+              selected={selected}
+              onSelectExercise={selectExercise}
               onSelectMuscle={setActive}
               onHoverExercise={setHovered}
             />
