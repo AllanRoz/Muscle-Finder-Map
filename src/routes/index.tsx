@@ -81,8 +81,8 @@ function Index() {
               <BodyMap
                 primary={active}
                 secondary={secondary}
-                hoverPrimary={hovered?.primary ?? []}
-                hoverSecondary={hovered?.secondary ?? []}
+                hoverPrimary={hovered?.primary ?? selected?.primary ?? []}
+                hoverSecondary={hovered?.secondary ?? selected?.secondary ?? []}
                 onSelect={setActive}
               />
             </div>
