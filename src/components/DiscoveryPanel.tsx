@@ -10,11 +10,13 @@ import {
 
 export function DiscoveryPanel({
   active,
+  selected,
   onSelectExercise,
   onSelectMuscle,
   onHoverExercise,
 }: {
   active: MuscleId | null;
+  selected?: Exercise | null;
   onSelectExercise: (e: Exercise) => void;
   onSelectMuscle: (m: MuscleId) => void;
   onHoverExercise?: (e: Exercise | null) => void;
@@ -54,6 +56,7 @@ export function DiscoveryPanel({
       <ul className="flex flex-col gap-3">
         {list.map((ex) => {
           const isPrimary = ex.primary.includes(active);
+          const isSelected = selected?.id === ex.id;
           return (
             <li key={ex.id}>
               <button
@@ -62,7 +65,12 @@ export function DiscoveryPanel({
                 onMouseLeave={() => onHoverExercise?.(null)}
                 onFocus={() => onHoverExercise?.(ex)}
                 onBlur={() => onHoverExercise?.(null)}
-                className="group grid w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-4 rounded-xl border border-border bg-card p-4 text-left transition-all hover:border-primary hover:bg-muted"
+                aria-pressed={isSelected}
+                className={`group grid w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-4 rounded-xl border p-4 text-left transition-all hover:border-primary hover:bg-muted ${
+                  isSelected
+                    ? "border-primary bg-primary/10 ring-2 ring-primary/50 drop-shadow-glow-primary"
+                    : "border-border bg-card"
+                }`}
               >
                 <span className="min-w-0">
                   <span className="flex min-w-0 items-center gap-2">
@@ -82,7 +90,11 @@ export function DiscoveryPanel({
                     <span className="text-xs text-muted-foreground">{ex.equipment}</span>
                   </span>
                 </span>
-                <PlayCircle className="h-6 w-6 shrink-0 text-muted-foreground transition-colors group-hover:text-primary" />
+                <PlayCircle
+                  className={`h-6 w-6 shrink-0 transition-colors group-hover:text-primary ${
+                    isSelected ? "text-primary" : "text-muted-foreground"
+                  }`}
+                />
               </button>
             </li>
           );
