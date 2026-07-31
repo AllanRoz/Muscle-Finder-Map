@@ -90,8 +90,11 @@ export function DiscoveryPanel({
                     <span className="text-xs text-muted-foreground">{ex.equipment}</span>
                   </span>
                 </span>
-                <PlayCircle className="h-6 w-6 shrink-0 text-muted-foreground transition-colors group-hover:text-primary" />
-              </button>
+                <PlayCircle
+                  className={`h-6 w-6 shrink-0 transition-colors group-hover:text-primary ${
+                    isSelected ? "text-primary" : "text-muted-foreground"
+                  }`}
+                />
             </li>
           );
         })}
