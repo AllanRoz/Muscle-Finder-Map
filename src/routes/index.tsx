@@ -91,6 +91,7 @@ function Index() {
           <section className="min-h-0 overflow-y-auto rounded-2xl border border-border bg-card/50 p-4 sm:p-6">
             <DiscoveryPanel
               active={active}
+              selected={open}
               onSelectExercise={setOpen}
               onSelectMuscle={setActive}
               onHoverExercise={setHovered}
